@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="TechStore: marketplace de periféricos e eletrônicos com teclados, mouses, monitores e hardware. Frete grátis para todo o Brasil.">
+    <title>TechStore - Loja de Periféricos e Eletrônicos</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <a href="#conteudo">Pular para o conteúdo principal</a>
+
+    <header id="topo">
+        <img src="img/logo.svg" alt="Logotipo da TechStore" width="320" height="90">
+        <h1>TechStore - O seu Marketplace Tech</h1>
+        <p>Os melhores periféricos e eletrônicos para levar o seu setup ao próximo nível.</p>
+        <p><strong>Frete grátis para todo o Brasil</strong></p>
+
+        <form action="index.html" method="get">
+            <label for="busca">Buscar produto:</label>
+            <input type="search" name="q" id="busca" placeholder="Digite o produto...">
+            <label for="categoria">Categoria:</label>
+            <select name="categoria" id="categoria">
+                <option value="todos">Todos</option>
+                <option value="hardware">Hardware</option>
+                <option value="perifericos">Periféricos</option>
+                <option value="monitores">Monitores</option>
+            </select>
+            <button type="submit">Buscar</button>
+        </form>
+
+        <nav aria-label="Menu principal">
+            <ul>
+                <li><a href="#vitrine">Produtos</a></li>
+                <li><a href="#detalhes">Especificações</a></li>
+                <li><a href="#comparacao">Comparação</a></li>
+                <li><a href="#carrinho">Carrinho</a></li>
+                <li><a href="#checkout">Cadastro e Checkout</a></li>
+                <li><a href="#rodape">Atendimento</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
+
+    <main id="conteudo">
+
+        <aside aria-label="Categorias e mais vendidos">
+            <h2>Categorias</h2>
+            <ul>
+                <li><a href="#vitrine">Periféricos</a></li>
+                <li><a href="#vitrine">Monitores</a></li>
+                <li><a href="#vitrine">Hardware</a></li>
+                <li><a href="#vitrine">Acessórios</a></li>
+            </ul>
+
+            <h2>Mais vendidos</h2>
+            <ol>
+                <li>Teclado Mecânico RGB</li>
+                <li>Mouse Gamer Sem Fio</li>
+                <li>Headset Gamer 7.1</li>
+            </ol>
+        </aside>
+
+        <section id="vitrine" aria-labelledby="titulo-vitrine">
+            <h2 id="titulo-vitrine">Produtos em Destaque</h2>
+
+            <article>
+                <h3>Teclado Mecânico RGB</h3>
+                <img src="img/teclado.jpg" alt="Teclado mecânico RGB preto com iluminação colorida" width="300" height="108">
+                <p>Teclado mecânico com <i>Switch Blue</i>, iluminação <i>RGB</i> personalizável e teclas <i>anti-ghosting</i>.</p>
+                <p>Por apenas <span>R$ 249,90</span> <b>À vista no PIX</b></p>
+
+                <figure>
+                    <video controls preload="metadata" width="640" poster="img/teclado-poster.jpg">
+                        <source src="video/teclado-demo.mp4" type="video/mp4">
+                        <source src="video/teclado-demo.webm" type="video/webm">
+                        Seu navegador não suporta vídeo HTML5.
+                        <a href="video/teclado-demo.mp4">Baixe o vídeo demonstrativo do Teclado Mecânico RGB</a>.
+                    </video>
+                    <figcaption>Vídeo demonstrativo: Teclado Mecânico RGB em uso.</figcaption>
+                </figure>
+
+                <a href="#carrinho">Simular Adicionar ao Carrinho</a>
+            </article>
+
+            <article>
+                <h3>Mouse Gamer Sem Fio</h3>
+                <img src="img/mouse.jpg" alt="Mouse gamer sem fio preto com detalhes em LED" width="200" height="255">
+                <p>Mouse <i>wireless</i> com sensor de 16000 <i>DPI</i>, 6 botões programáveis e bateria de longa duração.</p>
+                <p>Por apenas <span>R$ 179,90</span> <b>Parcele em até 10x sem juros</b></p>
+                <a href="#carrinho">Simular Adicionar ao Carrinho</a>
+            </article>
+        </section>
+
+        <hr>
+
+        <section id="detalhes" aria-labelledby="titulo-detalhes">
+            <h4 id="titulo-detalhes">Especificações Técnicas do Produto em Destaque</h4>
+            <p>
+                O Teclado Mecânico RGB foi projetado para quem busca precisão e durabilidade,
+                seja nos jogos ou no trabalho. <em>Garantia oficial de 2 anos direto com o fabricante</em>.
+            </p>
+            <p>
+                <b>Requisitos do sistema:</b><br>
+                Windows 10 ou superior, macOS ou Linux<br>
+                Porta USB 2.0 ou superior<br>
+                Compatível com PC, notebook e consoles<br>
+                <br>
+                <b>Itens inclusos na caixa:</b><br>
+                1 teclado mecânico RGB<br>
+                1 cabo USB-C destacável de 1,8 m<br>
+                1 removedor de teclas (<i>keycap puller</i>)<br>
+                1 manual de instruções
+            </p>
+        </section>
+
+        <hr>
+
+        <section id="comparacao" aria-labelledby="titulo-comparacao">
+            <h2 id="titulo-comparacao">Comparação Técnica dos Produtos</h2>
+            <table>
+                <caption>Comparativo entre o Teclado Mecânico RGB e o Mouse Gamer Sem Fio</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Modelo</th>
+                        <th scope="col">Conectividade</th>
+                        <th scope="col">Peso</th>
+                        <th scope="col">Garantia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Teclado Mecânico RGB</th>
+                        <td>Cabo USB-C destacável (1,8 m)</td>
+                        <td>980 g</td>
+                        <td>2 anos</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Mouse Gamer Sem Fio</th>
+                        <td>Wireless 2.4 GHz e Bluetooth</td>
+                        <td>85 g</td>
+                        <td>1 ano</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <section id="carrinho" aria-labelledby="titulo-carrinho">
+            <h5 id="titulo-carrinho">Meu Carrinho de Compras</h5>
+            <p>
+                Itens no carrinho:<br>
+                1x Teclado Mecânico RGB - R$ 249,90<br>
+                1x Mouse Gamer Sem Fio - R$ 179,90<br>
+                <br>
+                <b>Valor total estimado: R$ 429,80</b>
+            </p>
+            <a href="#checkout">Finalizar Compra</a> |
+            <a href="#topo">Continuar Comprando</a>
+        </section>
+
+        <hr>
+
+        <section id="checkout" aria-labelledby="titulo-checkout">
+            <h2 id="titulo-checkout">Cadastro e Checkout</h2>
+            <form action="processa-pedido.html" method="post">
+
+                <fieldset>
+                    <legend>Dados Pessoais</legend>
+                    <p>
+                        <label for="nome">Nome completo:</label>
+                        <input type="text" name="nome" id="nome" required>
+                    </p>
+                    <p>
+                        <label for="email">E-mail:</label>
+                        <input type="email" name="email" id="email" required>
+                    </p>
+                    <p>
+                        <label for="senha">Senha:</label>
+                        <input type="password" name="senha" id="senha" required>
+                    </p>
+                    <p>
+                        <label for="nascimento">Data de nascimento:</label>
+                        <input type="date" name="nascimento" id="nascimento">
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Entrega e Pagamento</legend>
+                    <p>
+                        <label for="quantidade">Quantidade do item:</label>
+                        <input type="number" name="quantidade" id="quantidade" min="1" max="10" value="1">
+                    </p>
+                    <p>
+                        Modalidade de frete:<br>
+                        <input type="radio" name="frete" id="frete-padrao" value="padrao" checked>
+                        <label for="frete-padrao">Padrão</label>
+                        <input type="radio" name="frete" id="frete-expressa" value="expressa">
+                        <label for="frete-expressa">Expressa</label>
+                    </p>
+                    <p>
+                        <label for="pagamento">Forma de pagamento:</label>
+                        <select name="pagamento" id="pagamento">
+                            <option value="" disabled selected>Selecione a forma de pagamento</option>
+                            <option value="pix">Pix</option>
+                            <option value="cartao">Cartão de Crédito</option>
+                            <option value="boleto">Boleto</option>
+                        </select>
+                    </p>
+                    <p>
+                        <input type="checkbox" name="termos" id="termos" value="aceito" required>
+                        <label for="termos">Aceito os termos de uso</label><br>
+                        <input type="checkbox" name="ofertas" id="ofertas" value="sim">
+                        <label for="ofertas">Desejo receber ofertas por e-mail</label>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Comentários</legend>
+                    <p>
+                        <label for="observacoes">Observações do pedido:</label><br>
+                        <textarea name="observacoes" id="observacoes" rows="4" cols="40" placeholder="Ponto de referência, instruções de entrega..."></textarea>
+                    </p>
+                </fieldset>
+
+                <button type="submit">Finalizar Pedido</button>
+                <button type="reset">Limpar Formulário</button>
+            </form>
+        </section>
+
+    </main>
+
+    <hr>
+
+    <footer id="rodape">
+        <h6>Políticas e Atendimento</h6>
+        <p>
+            <a href="https://www.techstore-exemplo.com.br/termos-de-uso">Termos de Uso</a> |
+            <a href="https://www.techstore-exemplo.com.br/privacidade">Política de Privacidade</a> |
+            <a href="https://www.instagram.com/techstore-exemplo">Instagram</a> |
+            <a href="https://www.facebook.com/techstore-exemplo">Facebook</a>
+        </p>
+        <p>&copy; 2026 TechStore - Todos os direitos reservados. CNPJ 00.000.000/0001-00</p>
+    </footer>
+
+</body>
+</html>

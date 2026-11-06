@@ -1,0 +1,497 @@
+/* ==========================================================
+   estilo.css - Etapa 4 (Versão 4.0) - TechStore
+   Toda a apresentação visual fica neste arquivo.
+   ========================================================== */
+
+/* 2. Reset básico e Box Model global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primaria: #2563eb;
+  --primaria-escura: #1d4ed8;
+  --destaque: #f59e0b;
+  --texto: #1f2937;
+  --suave: #6b7280;
+  --fundo: #f3f4f6;
+  --superficie: #ffffff;
+  --borda: #d1d5db;
+  --escuro: #111827;
+  --raio: 8px;
+  --sombra: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--texto);
+  background-color: var(--fundo);
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--primaria);
+}
+
+/* Link "pular para o conteúdo": aparece só ao receber foco */
+body > a:first-child {
+  position: absolute;
+  left: -9999px;
+}
+
+body > a:first-child:focus {
+  left: 8px;
+  top: 8px;
+  padding: 8px 12px;
+  background: #fff;
+  z-index: 10;
+}
+
+/* ---------- Cabeçalho ---------- */
+header {
+  background-color: var(--primaria);
+  color: #fff;
+  text-align: center;
+  padding: 24px 16px 0;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 8px 0;
+}
+
+header img {
+  display: block;
+  margin: 0 auto;
+}
+
+header p {
+  margin-bottom: 6px;
+}
+
+header hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/* Busca (GET) em linha */
+header form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 16px 0;
+}
+
+header form label {
+  display: inline;
+  margin: 0;
+  font-weight: 600;
+}
+
+header form input[type="search"],
+header form select {
+  width: auto;
+  min-width: 200px;
+  margin: 0;
+}
+
+header form button {
+  margin: 0;
+  background-color: var(--destaque);
+  color: var(--escuro);
+}
+
+header form button:hover {
+  background-color: #d97706;
+}
+
+/* ---------- 3. Menu de navegação ---------- */
+nav {
+  background-color: var(--escuro);
+  margin: 0 -16px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav li {
+  list-style: none;
+}
+
+nav a {
+  display: block;
+  padding: 14px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.25s, color 0.25s;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: var(--destaque);
+  color: var(--escuro);
+}
+
+/* ---------- Layout: barra lateral + conteúdo principal ---------- */
+main {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 24px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+main > * {
+  grid-column: 2;
+  min-width: 0;
+}
+
+main > aside {
+  grid-column: 1;
+  grid-row: 1 / span 10;
+  position: sticky;
+  top: 16px;
+}
+
+/* Página simples (ex.: processa-pedido.html) */
+body > main:not(:has(aside)) {
+  display: block;
+  max-width: 800px;
+}
+
+body > main:not(:has(aside)) > * {
+  margin-bottom: 12px;
+}
+
+aside {
+  padding: 20px;
+  background-color: var(--superficie);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+
+aside h2 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: var(--primaria-escura);
+}
+
+aside ul,
+aside ol {
+  margin-bottom: 20px;
+}
+
+aside ul {
+  list-style: none;
+}
+
+aside ol {
+  padding-left: 20px;
+}
+
+aside li {
+  padding: 6px 0;
+}
+
+aside ul li {
+  border-bottom: 1px solid var(--borda);
+}
+
+aside a {
+  text-decoration: none;
+}
+
+aside a:hover {
+  text-decoration: underline;
+}
+
+/* Seções do conteúdo principal como "painéis" */
+main > section {
+  padding: 24px;
+  background-color: var(--superficie);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+
+#comparacao {
+  overflow-x: auto;
+}
+
+main > hr {
+  display: none;
+}
+
+main h2 {
+  color: var(--primaria-escura);
+  margin-bottom: 14px;
+}
+
+main h4,
+main h5 {
+  color: var(--primaria-escura);
+  margin-bottom: 10px;
+}
+
+main p {
+  margin-bottom: 12px;
+}
+
+/* ---------- 4. Vitrine de produtos (cards) ---------- */
+article {
+  background-color: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  box-shadow: var(--sombra);
+  margin: 16px 0;
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+article:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+article h3 {
+  margin-bottom: 10px;
+}
+
+article img,
+article video {
+  display: block;
+  border-radius: var(--raio);
+  margin-bottom: 12px;
+}
+
+figure {
+  margin: 12px 0;
+}
+
+figcaption {
+  font-size: 0.85rem;
+  color: var(--suave);
+}
+
+article span {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #047857;
+}
+
+article > a {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 8px 16px;
+  background-color: var(--primaria);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.25s;
+}
+
+article > a:hover {
+  background-color: var(--primaria-escura);
+}
+
+/* ---------- 5. Tabela comparativa ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--superficie);
+}
+
+caption {
+  text-align: left;
+  font-weight: 700;
+  padding-bottom: 8px;
+}
+
+thead {
+  background-color: var(--primaria);
+  color: #fff;
+}
+
+th {
+  font-weight: bold;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--borda);
+}
+
+tbody tr:nth-child(even) {
+  background-color: #eef2ff;
+}
+
+tbody tr:hover {
+  background-color: #dbeafe;
+}
+
+/* ---------- 6. Formulários ---------- */
+main form {
+  max-width: 600px;
+}
+
+fieldset {
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 16px 20px 8px;
+  margin-bottom: 20px;
+}
+
+legend {
+  padding: 0 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primaria-escura);
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+/* Rótulos de radio/checkbox ficam ao lado do campo */
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  display: inline;
+  font-weight: 400;
+  margin-right: 12px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 4px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="number"],
+input[type="search"],
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--texto);
+  background-color: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primaria);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+  background-color: #f8fbff;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+  padding: 10px 22px;
+  margin-right: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--primaria);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.25s, transform 0.1s;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: var(--primaria-escura);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button[type="reset"],
+input[type="reset"] {
+  background-color: var(--suave);
+}
+
+button[type="reset"]:hover,
+input[type="reset"]:hover {
+  background-color: #4b5563;
+}
+
+/* ---------- Rodapé ---------- */
+body > hr {
+  display: none;
+}
+
+footer {
+  background-color: var(--escuro);
+  color: #d1d5db;
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.9rem;
+}
+
+footer h6 {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+footer a {
+  color: #93c5fd;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 800px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  main > *,
+  main > aside {
+    grid-column: 1;
+    grid-row: auto;
+    position: static;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+}
